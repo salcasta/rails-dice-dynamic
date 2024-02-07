@@ -32,6 +32,38 @@ class DiceController < ApplicationController
       @rolls.push(die)
     end
 
-    render({ :template => "dice_templates/two_six" })
+    render({ :template => "dice_templates/two_ten" })
+  end
+
+  def one_twenty
+    @num_dice = 1
+    
+    @sides = 20
+    
+    @rolls = []
+    
+    @num_dice.times do
+      die = rand(1..@sides)
+    
+      @rolls.push(die)
+    end
+
+    render({ :template => "dice_templates/one_twenty" })
+  end
+
+  def five_four
+    @num_dice = 5
+    
+    @sides = 4
+    
+    @rolls = []
+    
+    @num_dice.times do
+      die = rand(1..@sides)
+    
+      @rolls.push(die)
+    end
+
+    render({ :template => "dice_templates/five_four" })
   end
 end
